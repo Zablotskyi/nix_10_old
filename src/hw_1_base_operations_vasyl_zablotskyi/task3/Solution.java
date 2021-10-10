@@ -3,78 +3,34 @@ package hw_1_base_operations_vasyl_zablotskyi.task3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //создаем map в котором будем хранить в ключе номер урока, а в значении объект у которого два поля (часы и минуты)
+        Map<String, LessonTime> lessonsByTime = new HashMap<>();
+        lessonsByTime.put("1", new LessonTime(9,45));
+        lessonsByTime.put("2", new LessonTime(10,35));
+        lessonsByTime.put("3", new LessonTime(11,35));
+        lessonsByTime.put("4", new LessonTime(12,25));
+        lessonsByTime.put("5", new LessonTime(13,25));
+        lessonsByTime.put("6", new LessonTime(14,15));
+        lessonsByTime.put("7", new LessonTime(15,15));
+        lessonsByTime.put("8", new LessonTime(16,5));
+        lessonsByTime.put("9", new LessonTime(17,5));
+        lessonsByTime.put("10", new LessonTime(17,55));
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Ведите номер урока (от 1 до 10) который вас интересует:");
         String lesson = reader.readLine();
 
-        switch (lesson) {
-            case ("1") : {
-                int h = 9;
-                int m = 45;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("2") : {
-                int h = 10;
-                int m = 35;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("3") : {
-                int h = 11;
-                int m = 35;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("4") : {
-                int h = 12;
-                int m = 25;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("5") : {
-                int h = 13;
-                int m = 25;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("6") : {
-                int h = 14;
-                int m = 15;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("7") : {
-                int h = 15;
-                int m = 15;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("8") : {
-                int h = 16;
-                int m = 05;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("9") : {
-                int h = 17;
-                int m = 05;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            break;
-            case ("10") : {
-                int h = 17;
-                int m = 55;
-                System.out.println("Окончание урока в: " + h + " : " + m);
-            }
-            default : {
-                System.out.println("Введен неправильный номер урока");
-            }
-            break;
-        }
+        //создаем объект и передаем в него ключ
+        LessonTime needLesson = lessonsByTime.get(lesson);
+
+        //через геттеры выводим нужные нам значения часов и минут
+        System.out.println(needLesson.getHour() + " " + needLesson.getMinutes());
+
+        reader.close();
     }
 }
