@@ -37,7 +37,7 @@ public class Solution {
         System.out.println("Количество повторов всех символов: ");
         int serialNumber = 1;
         for (Map.Entry res : result.entrySet()) {
-            System.out.print(serialNumber ++ + ". ");
+            System.out.print(serialNumber ++ + " ");
             System.out.println(res.getKey() + " - " + res.getValue());
         }
     }
