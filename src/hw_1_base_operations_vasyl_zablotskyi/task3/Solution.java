@@ -29,6 +29,7 @@ public class Solution {
         LessonTime needLesson = lessonsByTime.get(lesson);
 
         //через геттеры выводим нужные нам значения часов и минут
+        System.out.print("Урок под номером: " + lesson + " закончится в: ");
         System.out.println(needLesson.getHour() + " " + needLesson.getMinutes());
 
         reader.close();

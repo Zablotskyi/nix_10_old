@@ -11,7 +11,7 @@ public class Solution {
         System.out.println("Введите строку:");
         String s = reader.readLine();
 
-        //преабразовуем строку в массив символов
+        //преобразовуем строку в массив символов
         char[] str = s.toCharArray();
 
         //создаем переменную нашего результата
