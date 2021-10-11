@@ -1,0 +1,2 @@
+java -jar hw_1_base_operations_vasyl_zablotskyi_task2.jar
+pause
